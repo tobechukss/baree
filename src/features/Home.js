@@ -21,6 +21,12 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
+const loginButtonUrl = 'https://firebasestorage.googleapis.com/v0/b/baree-41c3c.appspot.com/o/noimg.jpg?alt=media&token=547c3281-7236-4d62-816a-2b1bc9b5f493';
+
+const styles = {
+    backgroundImage: `url(${loginButtonUrl})`,
+    minHeight:'215px'
+}
 
 
 class Home extends Component {
@@ -88,7 +94,7 @@ class Home extends Component {
                         allPhotos.push(newItem);
                     })
                     
-                    console.log('allPhotos', allPhotos);
+                    // console.log('allPhotos', allPhotos);
                     this.setState({ allPhotos });
                 });
             }
@@ -136,15 +142,33 @@ class Home extends Component {
         
         
         const allImages = this.state.allPhotos.map(photo => {
+            
+           
 
-          return (
-            <div key={photo.id}>
-              <div style={{minHeight: '215px'}}>
-                <i onClick={() => this.handleRemove(photo.id)} className="bottom-icon material-icons main-close">close</i>
-                <Image style={{ width: '100%' }} src={photo.url} responsive="true" />
-              </div>
-            </div>
-          );
+            if (photo.labeldesc && photo.labeldesc.includes('Face')|| photo.labeldesc && photo.labeldesc.includes('Cheek')|| photo.labeldesc && photo.labeldesc.includes('Lip')||photo.labeldesc && photo.labeldesc.includes('Eyelash')) {
+                console.log(photo.labeldesc)
+                return (
+                    <div key={photo.id}>
+                      <div style={{minHeight: '215px'}}>
+                        <i onClick={() => this.handleRemove(photo.id)} className="bottom-icon material-icons main-close">close</i>
+                        <Image style={{ width: '100%' }} src={photo.url} responsive="true" />
+                      </div>
+                    </div>
+                  );
+            } else {
+                console.log('No face')
+                return (
+                    <div>
+                        <div style={styles}>
+                            <h1>Upload a picture of your face</h1>
+                        </div>
+                    </div>
+
+                )
+                    
+            }
+            
+          
         })
         
       

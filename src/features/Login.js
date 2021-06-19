@@ -26,7 +26,7 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-const loginButtonUrl = 'https://firebasestorgs://baree-41c3c.appspot.com/google-icon-white.pngage.googleapis.com/v0/b/image-identifier-415df.appspot.com/o/google-icon-white.png?alt=media&token=431cf4f2-5dc4-49c5-8f1a-5464663c8b88';
+const loginButtonUrl = 'https://firebasestorage.googleapis.com/v0/b/baree-41c3c.appspot.com/o/google-icon-white.png?alt=media&token=55162799-626a-4756-9040-11d8b075df4f';
 
 const styles = {
     backgroundImage: `url(${loginButtonUrl})`
