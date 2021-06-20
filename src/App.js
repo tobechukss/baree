@@ -21,7 +21,7 @@ const analytics = firebase.analytics();
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <div className="login-container">
+    <div className="App">
 
       <section>
         {user ? <Home /> : <SignIn />}

@@ -24,6 +24,14 @@ html {
   margin: 0 auto;
      cursor: pointer;
  }
+
+ h1 {
+  font-weight: 600;
+  font-size: 40px;
+  color: black;
+}
+
+
  .login-container { 
   background-color: palegreen;
   width: 100%;
@@ -51,18 +59,14 @@ html {
    margin-bottom: 50px;
  }
  
- /*#root {
-   max-width: 500px;
-   margin: 0 auto;
-   margin-bottom: 50px;
- }*/
- 
  
  
  div.home {
-     background-color: black;
+   background: palegreen;
+     border-radius: 15px;
      color: white;
-     max-height: 200px;
+     max-height: 100px;
+    
  }
  
  
@@ -76,23 +80,7 @@ html {
    text-align: center;
  }
  
- .scrolling-wrapper {
-   overflow-x: scroll;
-   overflow-y: hidden;
-   white-space: nowrap;
- }
- 
- .scrolling-wrapper .main-photo.card-1.card {
-     display: inline-block !important;
-     color: white;
-     text-align: center;
-     padding: 14px;
-     text-decoration: none;
- }
- 
- .card-1.card.loading-card {
-   padding-top: 30px !important;
- }
+
  
  
  .App-logo {
@@ -108,10 +96,7 @@ html {
    overflow-x: auto;
    white-space: nowrap;
  }
- .testimonial-group > .row > .col-xs-4 {
-   display: inline-block;
-   float: none;
- }
+ 
  
  .main-photo {
    background-position: center center;
@@ -129,38 +114,19 @@ html {
    left: 10px;
  }
  
- .card-1 {
-   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-   padding: 25px;
-   padding-top: 30px;
- }
+
  
- .card-1:hover {
-   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
- }
+ .
  
  
  
- .dopple-image {
-   height: 100px;
-   width: 100px;
-   border-radius: 50%;
-   /*position: relative;*/
-   /*bottom: 20px;  */
- }
- 
+
  
  .text-center {
    height: 130px;
    overflow-y: hidden;
    margin-bottom: 20px;
  }
- /* Decorations
- /*.testimonial-group > .row > .col-xs-4 { color: #fff; font-size: 48px; padding-bottom: 20px; padding-top: 18px; }
- .testimonial-group > .row > .col-xs-4:nth-child(3n+1) { background: #c69; }
- .testimonial-group > .row > .col-xs-4:nth-child(3n+2) { background: #9c6; }
- .testimonial-group > .row > .col-xs-4:nth-child(3n+3) { background: #69c; }*/
  
  .App-header {
    background-color: #222;
@@ -219,4 +185,11 @@ html {
  .bottom-icon {
    font-size: 35px;
    line-height: 44px;
+   color:hotpink;
+   margin-right: 10px;
+   cursor: pointer;
+ }
+
+ .close {
+   color: black;
  }

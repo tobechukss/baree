@@ -25,7 +25,14 @@ const loginButtonUrl = 'https://firebasestorage.googleapis.com/v0/b/baree-41c3c.
 
 const styles = {
     backgroundImage: `url(${loginButtonUrl})`,
-    minHeight:'215px'
+    minHeight:'215px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    displayName: 'block',
+    backgroundRepeat: 'no-repeat',
+    width: '75%',
+    margin: '120px auto 60px',
+    borderRadius: '10px'
 }
 
 
@@ -145,22 +152,23 @@ class Home extends Component {
             
            
 
-            if (photo.labeldesc && photo.labeldesc.includes('Face')|| photo.labeldesc && photo.labeldesc.includes('Cheek')|| photo.labeldesc && photo.labeldesc.includes('Lip')||photo.labeldesc && photo.labeldesc.includes('Eyelash')) {
+            if (photo.labeldesc && photo.labeldesc.includes('Face')|| photo.labeldesc && photo.labeldesc.includes('Cheek')|| photo.labeldesc && photo.labeldesc.includes('Lip')||photo.labeldesc && photo.labeldesc.includes('Eyelash') || photo.labeldesc && photo.labeldesc.includes('Jaw')||photo.labeldesc && photo.labeldesc.includes('Eye')||photo.labeldesc && photo.labeldesc.includes('Nose')) {
                 console.log(photo.labeldesc)
                 return (
                     <div key={photo.id}>
                       <div style={{minHeight: '215px'}}>
                         <i onClick={() => this.handleRemove(photo.id)} className="bottom-icon material-icons main-close">close</i>
-                        <Image style={{ width: '100%' }} src={photo.url} responsive="true" />
+                        <Image style={{ margin: '120px auto 60px', width: '70%', borderRadius: '10px' }} src={photo.url} responsive="true" />
                       </div>
                     </div>
                   );
             } else {
                 console.log('No face')
                 return (
-                    <div>
+                    <div key={photo.id}>
                         <div style={styles}>
-                            <h1>Upload a picture of your face</h1>
+                        <i onClick={() => this.handleRemove(photo.id)} className="bottom-icon material-icons main-close close">close</i>
+                            <h5 style={{backgroundColor: 'black', top: "0"}}>Upload a picture of your face</h5>
                         </div>
                     </div>
 
@@ -175,9 +183,10 @@ class Home extends Component {
         
 
 		return (
-			 <div class="home">
+			 <div className="home">
+                
                 <h1>My Photo Feed</h1>
-                <h5> Hi there! Click the camera to upload a gorgeous photo to our database! You will see it displayed on our screen. Click the x at the top left to delete the photo! You can upload multiple photos, scroll down to see!</h5>
+                <h5> Upload a photo of your face then scroll</h5>
                 
                 {this.state.isMobile ? <h3> For sellfies - rotate to landscape</h3>: ""}
                 {allImages}

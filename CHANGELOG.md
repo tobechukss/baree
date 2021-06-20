@@ -7,8 +7,8 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2021-06-18
 ### Added
 - Created UI for app's frontend using react
-- Added sign in with google function
-- Added sign out function to ensure user account safety
+- Added sign in with google function (features/login.js)
+- Added sign out function to ensure user account safety(features/home.js)
 - installed firebase to help with user authentication
 - linked app to firestore database collection
 - wrote functions to enable app interact with firestore data base.
@@ -17,8 +17,20 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.1] - 2021-06-19
 ### Added
-- Function using google vision API and firebase functions to assess a photo and present an array containing the photos labels. This can be found in the functuon file in the index.js
+- Function using google vision API and firebase functions to assess a photo and present an array containing the photos labels. This can be found in the functuon file in the index.js(function/index.js)
 - If-else statement was added on the frontend to parse through the labels the vision api provided and decide based on the features of the picture whether it's a face or not
 - Added picture firestore which would be rendered if user uploads image that is not a face
 ### Changed
 - Changed the url for the google logo from firebase to make it display
+
+## [1.0.2] - 2021-06-20
+### Added
+-App made into a PWA
+-Created offline.html file for when app is offline
+-Added icon to the public/images folder that will load even when file is offline
+-Added and created functions in serviceworker.js to listen to cache when app is offline
+
+### Changed
+-Edited manifest.json
+-Added more scenarios to if else statement in home.js to better the image identifier
+-Edited css
